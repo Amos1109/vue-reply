@@ -1,0 +1,11 @@
+{
+  // 告诉vscode路径@的文件在哪里，允许通过ctrl找到源文件
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+        "@/*": ["src/*"]
+    }
+  },
+  // 说明这些文件不是源代码的一部分，这使性能保持在较高水平
+  "exclude": ["node_modules", "dist"]
+}
