@@ -27,19 +27,19 @@ export const subjects = [
     title: "在javascript里，下列选项中不属于数组方法的是",
     options: [
       {
-        id: 5,
+        id: 1,
         value: "sort()"
       },
       {
-        id: 6,
+        id: 2,
         value: "concat()"
       },
       {
-        id: 7,
+        id: 3,
         value: "length()"
       },
       {
-        id: 8,
+        id: 4,
         value: "reverse()"
       }
     ]
@@ -49,19 +49,19 @@ export const subjects = [
     title: "下列哪一个选项可以用来检索被选定的选项的索引号?",
     options: [
       {
-        id: 9,
+        id: 1,
         value: "disabled"
       },
       {
-        id: 10,
+        id: 2,
         value: "option"
       },
       {
-        id: 11,
+        id: 3,
         value: "multiple"
       },
       {
-        id: 12,
+        id: 4,
         value: "selectedIndex"
       }
     ]
@@ -71,19 +71,19 @@ export const subjects = [
     title: "制作级联菜单功能时调用的是下拉列表框的（）事件",
     options: [
       {
-        id: 13,
+        id: 1,
         value: "onChange"
       },
       {
-        id: 14,
+        id: 2,
         value: "onFocus"
       },
       {
-        id: 15,
+        id: 3,
         value: "selected"
       },
       {
-        id: 16,
+        id: 4,
         value: "onClick"
       }
     ]
@@ -93,19 +93,19 @@ export const subjects = [
     title: "javascript进行表单验证的目的是（）",
     options: [
       {
-        id: 17,
+        id: 1,
         value: "把用户的正确信息提交给服务器"
       },
       {
-        id: 18,
+        id: 2,
         value: "检查提交的数据必须符合实际"
       },
       {
-        id: 19,
+        id: 3,
         value: "使得页面变得美观、大方"
       },
       {
-        id: 20,
+        id: 4,
         value: "减轻服务器端的压力"
       }
     ]

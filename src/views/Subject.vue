@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div class="numberTip">
-      <div class="tip">第一题</div>
+      <div class="tip">第{{ index + 1 }}题</div>
     </div>
 
     <div class="subject">
@@ -17,7 +17,7 @@
       </div>
     </div>
 
-    <div class="btn">
+    <div class="btn" @click="nextSubject">
       <img class="pic" src="../assets/images/nextBtn.png" />
     </div>
   </div>
@@ -30,14 +30,37 @@ export default {
   data() {
     return {
       index: 0,
-      radio: 0,
-      subjects: null
+      radio: null,
+      subjects: null,
+      score: 0
     };
   },
   created() {
     this.subjects = subjects;
   },
-  methods: {}
+  methods: {
+    nextSubject() {
+      if (this.radio) {
+        // 答对加分
+        if (this.radio == this.subjects[this.index].answerId) {
+          this.score = this.score + 20;
+        }
+        this.radio = null;
+
+        // 答题结束，计分
+        if (this.index == this.subjects.length - 1) {
+          this.$router.replace({
+            name: "Result",
+            params: { score: this.score }
+          });
+        } else {
+          this.index++;
+        }
+      } else {
+        this.$toast("请做出选择！");
+      }
+    }
+  }
 };
 </script>
 

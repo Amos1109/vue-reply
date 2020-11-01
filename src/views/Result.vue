@@ -1,8 +1,8 @@
 <template>
   <div class="result">
     <div class="score">
-      <div class="number">40分！</div>
-      <div class="tip">还不错，但还需要继续加油哦！</div>
+      <div class="number">{{ score }}分！</div>
+      <div class="tip">{{ scoreText[score] }}</div>
     </div>
 
     <div class="btn">
@@ -14,8 +14,25 @@
 <script>
 export default {
   name: "Result",
+  created() {
+    if (this.$route.params.score == null) {
+      this.$router.replace({ name: "Home" });
+    } else {
+      this.score = this.$route.params.score;
+    }
+  },
   data() {
-    return {};
+    return {
+      score: null,
+      scoreText: {
+        0: "你好像不太聪明的亚子。",
+        20: "太菜了，多念点书吧！",
+        40: "在加把劲，快合格了。",
+        60: "勉勉强强，总算过关了。",
+        80: "还不错，但还需要继续加油哦！",
+        100: "全部答对了耶，你真棒！"
+      }
+    };
   },
   methods: {}
 };
