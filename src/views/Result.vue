@@ -4,10 +4,6 @@
       <div class="number">{{ score }}分！</div>
       <div class="tip">{{ scoreText[score] }}</div>
     </div>
-
-    <div class="btn">
-      <img class="pic" src="../assets/images/shareBtn.png" />
-    </div>
   </div>
 </template>
 

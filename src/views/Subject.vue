@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import { subjects } from "@/utils/config.js";
+import { subjects } from "@/config.js";
 export default {
   name: "Subject",
   data() {

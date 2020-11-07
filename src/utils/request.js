@@ -26,7 +26,7 @@ instance.interceptors.request.use(
 instance.interceptors.response.use(
   response => {
     if (response.status == 200) {
-      return response;
+      return response.data;
     }
   },
   error => {
