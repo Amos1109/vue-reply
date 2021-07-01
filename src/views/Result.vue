@@ -1,8 +1,15 @@
 <template>
   <div class="result">
+    <div class="title" style="padding-top: 40px">
+      <img src="../assets/images/usx.jpg" style="height: 40px;width: 150px"><br/>
+      <img src="../assets/images/logo.png" style="height: 80px;width: 210px;">
+    </div>
     <div class="score">
-      <div class="number">{{ score }}分！</div>
-      <div class="tip">{{ scoreText[score] }}</div>
+      <div class="number">您答对了{{ score }}题！</div>
+      <div class="tip">您选择了{{num}}题，答对了{{score}}题，正确率{{ towNumber(score/num)*100}}%。</div>
+    </div>
+    <div style="margin-top: 20px;">
+      <van-button type="warning" @click="goHome">再来一局</van-button>
     </div>
   </div>
 </template>
@@ -15,22 +22,23 @@ export default {
       this.$router.replace({ name: "Home" });
     } else {
       this.score = this.$route.params.score;
+      this.num=this.$route.params.num;
     }
   },
   data() {
     return {
       score: null,
-      scoreText: {
-        0: "你好像不太聪明的亚子。",
-        20: "太菜了，多念点书吧！",
-        40: "在加把劲，快合格了。",
-        60: "勉勉强强，总算过关了。",
-        80: "还不错，但还需要继续加油哦！",
-        100: "全部答对了耶，你真棒！"
-      }
+      num:null
     };
   },
-  methods: {}
+  methods: {
+    goHome() {
+      this.$router.push("Home");
+    },
+    towNumber(val) {
+      return val.toFixed(2)
+    }
+  }
 };
 </script>
 
@@ -56,7 +64,7 @@ export default {
       margin-left: 60px;
       margin-top: 200px;
       color: #a51d31;
-      font-size: 50px;
+      font-size: 40px;
       font-weight: bold;
     }
     .tip {
